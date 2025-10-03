@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ravex Shop - Premium Discord Services & Digital Subscriptions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        /* Snow Animation */
+        .snow {
+            position: fixed;
+            top: -10px;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .snowflake {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.6);
+            user-select: none;
+            pointer-events: none;
+            animation: fall linear infinite;
+        }
+        
+        @keyframes fall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        /* Hover animations */
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-link {
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #ffffff, #e5e5e5);
+            color: #000000;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #e5e5e5, #d4d4d4);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Fade in animation */
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-black text-white min-h-screen font-sans">
+    <!-- Snow Animation -->
+    <div class="snow" id="snow"></div>
+    
+    <!-- Navigation -->
+    <nav class="relative z-10 flex justify-between items-center p-6 max-w-7xl mx-auto">
+        <div class="text-2xl font-bold">
+            <a href="index.html" class="text-white">Ravex</a><span class="text-gray-400">.shop</span>
+        </div>
+        <div class="hidden md:flex space-x-8">
+            <a href="index.html" class="nav-link text-white">Home</a>
+            <a href="discord-services.html" class="nav-link">Discord Services</a>
+            <a href="digital-subscriptions.html" class="nav-link">Digital Subscriptions</a>
+            <a href="testimonials.html" class="nav-link">Testimonials</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+            <a href="terms.html" class="nav-link">Terms</a>
+        </div>
+        <div class="md:hidden">
+            <button id="mobile-menu-btn" class="text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-900 p-4 relative z-10">
+        <a href="index.html" class="block py-2 nav-link text-white">Home</a>
+        <a href="discord-services.html" class="block py-2 nav-link">Discord Services</a>
+        <a href="digital-subscriptions.html" class="block py-2 nav-link">Digital Subscriptions</a>
+        <a href="testimonials.html" class="block py-2 nav-link">Testimonials</a>
+        <a href="contact.html" class="block py-2 nav-link">Contact</a>
+        <a href="terms.html" class="block py-2 nav-link">Terms</a>
+    </div>
+    
+    <!-- Hero Section -->
+    <section class="relative z-10 text-center py-20 px-6 max-w-6xl mx-auto fade-in">
+        <h1 class="text-5xl md:text-7xl font-bold mb-6">
+            <span class="text-white">Ravex</span> Shop
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto">
+            Professional Discord services, boosts, members, and premium digital subscriptions
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="discord-services.html" class="btn-primary px-8 py-4 rounded-lg font-semibold text-lg inline-block">
+                Discord Services
+            </a>
+            <a href="digital-subscriptions.html" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-black transition-all duration-300 inline-block">
+                Digital Subscriptions
+            </a>
+        </div>
+    </section>
+    
+    <!-- Featured Channel -->
+    <section class="relative z-10 py-20 px-6 max-w-7xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-white">🔥 Featured Channel</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Server Boosts -->
+            <div class="service-card bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-xl border border-white">
+                <div class="text-4xl mb-4">⚡</div>
+                <h3 class="text-2xl font-bold mb-4">Server Boost 3M</h3>
+                <p class="text-gray-300 mb-4">14 boosts for 3 months</p>
+                <div class="text-3xl font-bold text-white mb-6">$31.99</div>
+                <a href="discord-services.html" class="btn-primary w-full py-3 rounded-lg font-semibold inline-block text-center">Buy Now</a>
+            </div>
+            
+            <!-- Discord Nitro -->
+            <div class="service-card bg-gradient-to-br from-gray-900 to-black p-8 rounded-xl border border-gray-400">
+                <div class="text-4xl mb-4">💎</div>
+                <h3 class="text-2xl font-bold mb-4">Discord Nitro Yearly</h3>
+                <p class="text-gray-300 mb-4">Full Discord Nitro for 12 months</p>
+                <div class="text-3xl font-bold text-white mb-6">$74.99</div>
+                <a href="digital-subscriptions.html" class="btn-primary w-full py-3 rounded-lg font-semibold inline-block text-center">Buy Now</a>
+            </div>
+            
+            <!-- Server Management -->
+            <div class="service-card bg-gradient-to-br from-gray-700 to-gray-800 p-8 rounded-xl border border-gray-300">
+                <div class="text-4xl mb-4">🚀</div>
+                <h3 class="text-2xl font-bold mb-4">Server Management</h3>
+                <p class="text-gray-300 mb-4">Complete management + giveaways</p>
+                <div class="text-3xl font-bold text-white mb-6">$250/mo</div>
+                <a href="discord-services.html" class="btn-primary w-full py-3 rounded-lg font-semibold inline-block text-center">Buy Now</a>
+            </div>
+            
+            <!-- YouTube Premium -->
+            <div class="service-card bg-gradient-to-br from-black to-gray-900 p-8 rounded-xl border border-gray-500">
+                <div class="text-4xl mb-4">📺</div>
+                <h3 class="text-2xl font-bold mb-4">YouTube Premium</h3>
+                <p class="text-gray-300 mb-4">Ad-free YouTube for 12 months</p>
+                <div class="text-3xl font-bold text-white mb-6">$29.99</div>
+                <a href="digital-subscriptions.html" class="btn-primary w-full py-3 rounded-lg font-semibold inline-block text-center">Buy Now</a>
+            </div>
+            
+            <!-- Crunchyroll -->
+            <div class="service-card bg-gradient-to-br from-gray-800 to-black p-8 rounded-xl border border-gray-400">
+                <div class="text-4xl mb-4">🍥</div>
+                <h3 class="text-2xl font-bold mb-4">Crunchyroll Premium</h3>
+                <p class="text-gray-300 mb-4">Premium anime streaming yearly</p>
+                <div class="text-3xl font-bold text-white mb-6">$21.99</div>
+                <a href="digital-subscriptions.html" class="btn-primary w-full py-3 rounded-lg font-semibold inline-block text-center">Buy Now</a>
+            </div>
+            
+            <!-- Spotify Premium -->
+            <div class="service-card bg-gradient-to-br from-gray-900 to-gray-700 p-8 rounded-xl border border-white">
+                <div class="text-4xl mb-4">🎵</div>
+                <h3 class="text-2xl font-bold mb-4">Spotify Premium</h3>
+                <p class="text-gray-300 mb-4">Ad-free music for 12 months</p>
+                <div class="text-3xl font-bold text-white mb-6">$29.99</div>
+                <a href="digital-subscriptions.html" class="btn-primary w-full py-3 rounded-lg font-semibold inline-block text-center">Buy Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="relative z-10 py-20 px-6 max-w-7xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-white">All Services</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Discord Services Preview -->
+            <div class="service-card bg-gray-900 p-8 rounded-xl border border-gray-800">
+                <div class="text-4xl mb-4">🚀</div>
+                <h3 class="text-2xl font-bold mb-4">Discord Services</h3>
+                <p class="text-gray-300 mb-6">Server boosts, management, members, and branding</p>
+                <a href="discord-services.html" class="btn-primary w-full py-3 rounded-lg font-semibold inline-block text-center">View Services</a>
+            </div>
+            
+            <!-- Digital Subscriptions Preview -->
+            <div class="service-card bg-gray-900 p-8 rounded-xl border border-gray-800">
+                <div class="text-4xl mb-4">💎</div>
+                <h3 class="text-2xl font-bold mb-4">Digital Subs</h3>
+                <p class="text-gray-300 mb-6">Nitro, Spotify, YouTube, Crunchyroll</p>
+                <a href="digital-subscriptions.html" class="btn-primary w-full py-3 rounded-lg font-semibold inline-block text-center">View Subscriptions</a>
+            </div>
+            
+            <!-- Testimonials Preview -->
+            <div class="service-card bg-gray-900 p-8 rounded-xl border border-gray-800">
+                <div class="text-4xl mb-4">⭐</div>
+                <h3 class="text-2xl font-bold mb-4">Customer Reviews</h3>
+                <p class="text-gray-300 mb-6">See what our customers say about us</p>
+                <a href="testimonials.html" class="btn-primary w-full py-3 rounded-lg font-semibold inline-block text-center">Read Reviews</a>
+            </div>
+            
+            <!-- Contact Preview -->
+            <div class="service-card bg-gray-900 p-8 rounded-xl border border-gray-800">
+                <div class="text-4xl mb-4">💬</div>
+                <h3 class="text-2xl font-bold mb-4">Get Support</h3>
+                <p class="text-gray-300 mb-6">24/7 customer support via Discord & Telegram</p>
+                <a href="contact.html" class="btn-primary w-full py-3 rounded-lg font-semibold inline-block text-center">Contact Us</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Why Choose Us -->
+    <section class="relative z-10 py-20 px-6 max-w-6xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-white">Why Choose Ravex Shop?</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="text-center">
+                <div class="text-6xl mb-4">⚡</div>
+                <h3 class="text-2xl font-bold mb-4">Instant Delivery</h3>
+                <p class="text-gray-300">Most products delivered within minutes of purchase</p>
+            </div>
+            
+            <div class="text-center">
+                <div class="text-6xl mb-4">🔒</div>
+                <h3 class="text-2xl font-bold mb-4">Secure Payments</h3>
+                <p class="text-gray-300">All transactions processed through MySellAuth</p>
+            </div>
+            
+            <div class="text-center">
+                <div class="text-6xl mb-4">🎯</div>
+                <h3 class="text-2xl font-bold mb-4">24/7 Support</h3>
+                <p class="text-gray-300">Always here to help via Discord and Telegram</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="relative z-10 bg-gray-900 py-12 px-6 mt-20">
+        <div class="max-w-6xl mx-auto text-center">
+            <div class="text-3xl font-bold mb-6">
+                <span class="text-white">Ravex</span><span class="text-gray-400">.shop</span>
+            </div>
+            <p class="text-gray-400 mb-8">Premium Discord services and digital subscriptions</p>
+            <div class="flex justify-center space-x-8 mb-8">
+                <a href="https://discord.gg/XWxe4wMYYp" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+                    </svg>
+                </a>
+                <a href="https://t.me/Ravex98" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                    </svg>
+                </a>
+            </div>
+            <p class="text-gray-500 text-sm">© 2024 Ravex.shop. All rights reserved. | Discord: i46f</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Snow animation
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.className = 'snowflake';
+            snowflake.innerHTML = '❄';
+            snowflake.style.left = Math.random() * 100 + '%';
+            snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
+            snowflake.style.opacity = Math.random();
+            snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
+            
+            document.getElementById('snow').appendChild(snowflake);
+            
+            setTimeout(() => {
+                snowflake.remove();
+            }, 5000);
+        }
+        
+        // Create snowflakes - more frequent for heavier snow
+        setInterval(createSnowflake, 150);
+        
+        // Create additional snowflakes on page load
+        for(let i = 0; i < 20; i++) {
+            setTimeout(createSnowflake, i * 100);
+        }
+        
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'988b75c244b6c1d2',t:'MTc1OTQ4NDIzNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
